@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppings", sans-serif;
+}
+
+
+
+body {
+    background: linear-gradient(135deg, #333333, #1a1a1a);
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+canvas {
+    background-color: #111;
+    background-size: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;  
+}
+
+.score--value {
+    font-weight: 700;
+    font-size: 4.5rem;
+    display: block;
+    margin-top: -10px;
+}
+
+.menu, .instrucao {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.instrucao {
+    display: flex;
+}
+
+.game-over {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.final-score {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.btn-play, .dificuldade-btn {
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.dificuldade-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.dificuldade-btn {
+    background-color: #555;
+    color: white;
+}
+
+.autoria {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5em; 
+    color: #fff; 
+    text-align: center;
+    margin-top: 20px;
+    font-weight: lighter;
+    position: absolute;
+    bottom: 10px;
+    right: 10px; 
+}
+
+.score--value, .autoria {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #ff6666; 
+}
+
+.game-over-effect {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+
+.dificuldade-btn[data-dificuldade="facil"] { background-color: green } 
+.dificuldade-btn[data-dificuldade="medio"] { background-color: yellow } 
+.dificuldade-btn[data-dificuldade="dificil"] { background-color: red } 
+
+
+.snake-part {
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    from { background-color: #ddd; }
+    to { background-color: #fff; }
+}
+
+.score--value {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5em;
+    color: yellow;
+}
